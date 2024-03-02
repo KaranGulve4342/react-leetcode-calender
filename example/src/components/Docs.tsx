@@ -5,13 +5,15 @@ import {
   useState,
 } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import GitHubButton from 'react-github-btn';
+// import GitHubButton from 'react-github-btn';
 // import GitHubCalendar, { Props } from 'react-github-calendar';
 import LeetcodeCalendar from 'react-leetcode-calendar';
+
 import { useSearchParams } from 'react-router-dom';
 
+
 import '../styles.scss';
-import pkg from '../../package.json';
+// import pkg from '../../package.json';
 
 // import CodeBlock from './CodeBlock.tsx';
 
@@ -81,14 +83,14 @@ const Docs: FunctionComponent = () => {
             <LeetcodeCalendar username={username} fontSize={16} throwOnError />
           </ErrorBoundary>
 
-          <p style={{ marginTop: '1.25rem', marginBottom: '1.25rem' }}>
+          {/* <p style={{ marginTop: '1.25rem', marginBottom: '1.25rem' }}>
             Made with love by <a href="https://jogruber.de">@grubersjoe</a>,
             current version:{' '}
             <a href="https://www.npmjs.com/package/react-github-calendar">
               <code>v{pkg.version}</code>
             </a>
-          </p>
-          <div>
+          </p> */}
+          {/* <div>
             <GitHubButton
               href="https://github.com/grubersjoe/react-github-calendar"
               data-color-scheme="no-preference: light; light: light; dark: dark;"
@@ -99,7 +101,7 @@ const Docs: FunctionComponent = () => {
             >
               Star
             </GitHubButton>
-          </div>
+          </div> */}
         </section>
 
         {/* <section>
@@ -493,11 +495,11 @@ function transformData(data: Array<Activity>): Array<Activity>;`}
           </p>
         </section> */}
 
-        <p style={{ marginTop: '3rem' }}>
+        {/* <p style={{ marginTop: '3rem' }}>
           <button onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
             Back to top
           </button>
-        </p>
+        </p> */}
       </main>
     </div>
   );
