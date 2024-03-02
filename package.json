@@ -11,9 +11,9 @@
     "deploy": "gh-pages -d example/build",
     "dev": "rollup -c -w",
     "format": "prettier --write './*' 'src/**/*' 'example/**/*'",
-    "lint": "eslint 'src/**/*' 'example/src/**/*'",
+    "lint": "eslint",
     "postbuild": "dts-bundle-generator src/index.tsx -o build/index.d.ts --no-check --no-banner",
-    "predeploy": "cd example && ./sync-version.js && pnpm install && npm run build",
+    "predeploy": "cd example && ./sync-version.js && npm install && npm run build",
     "prepare": "npm run build",
     "prepublishOnly": "npx tsc && npm run lint && npm run build"
   },

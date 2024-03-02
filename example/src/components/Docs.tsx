@@ -6,13 +6,14 @@ import {
 } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import GitHubButton from 'react-github-btn';
-import GitHubCalendar, { Props } from 'react-github-calendar';
+// import GitHubCalendar, { Props } from 'react-github-calendar';
+import LeetcodeCalendar from 'react-leetcode-calendar';
 import { useSearchParams } from 'react-router-dom';
 
 import '../styles.scss';
 import pkg from '../../package.json';
 
-import CodeBlock from './CodeBlock.tsx';
+// import CodeBlock from './CodeBlock.tsx';
 
 import { errorRenderer } from './Error.tsx';
 import ForkMe from './ForkMe.tsx';
@@ -77,7 +78,7 @@ const Docs: FunctionComponent = () => {
           </h4>
 
           <ErrorBoundary fallbackRender={errorRenderer} key={username}>
-            <GitHubCalendar username={username} fontSize={16} throwOnError />
+            <LeetcodeCalendar username={username} fontSize={16} throwOnError />
           </ErrorBoundary>
 
           <p style={{ marginTop: '1.25rem', marginBottom: '1.25rem' }}>
@@ -101,7 +102,7 @@ const Docs: FunctionComponent = () => {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h2>Installation</h2>
           <CodeBlock style={{ marginTop: '0.5rem' }}>
             yarn add react-github-calendar
@@ -112,9 +113,9 @@ const Docs: FunctionComponent = () => {
 
 <GitHubCalendar username="${username}" />`}
           </CodeBlock>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <h2>Component properties</h2>
           <p>
             The component uses{' '}
@@ -396,9 +397,9 @@ const Docs: FunctionComponent = () => {
               </tbody>
             </table>
           </div>
-        </section>
+        </section> */}
 
-        <section>
+        {/* <section>
           <h2>Examples & FAQ</h2>
           <p>
             Please refer to the Storybook of the calendar component for{' '}
@@ -469,7 +470,7 @@ function transformData(data: Array<Activity>): Array<Activity>;`}
           <br />
 
           <ErrorBoundary fallbackRender={errorRenderer} key={username}>
-            <GitHubCalendar
+            <LeetcodeCalendar
               username={username}
               transformData={selectLastHalfYear}
               hideColorLegend
@@ -490,7 +491,7 @@ function transformData(data: Array<Activity>): Array<Activity>;`}
             the <code>&#x007B;&#x007B; count &#x007D;&#x007D;</code>{' '}
             placeholder.
           </p>
-        </section>
+        </section> */}
 
         <p style={{ marginTop: '3rem' }}>
           <button onClick={() => window.scroll({ top: 0, behavior: 'smooth' })}>
@@ -502,21 +503,21 @@ function transformData(data: Array<Activity>): Array<Activity>;`}
   );
 };
 
-const selectLastHalfYear: Props['transformData'] = (contributions) => {
-  const currentYear = new Date().getFullYear();
-  const currentMonth = new Date().getMonth();
-  const shownMonths = 6;
+// const selectLastHalfYear: Props['transformData'] = (contributions) => {
+//   const currentYear = new Date().getFullYear();
+//   const currentMonth = new Date().getMonth();
+//   const shownMonths = 6;
 
-  return contributions.filter((activity) => {
-    const date = new Date(activity.date);
-    const monthOfDay = date.getMonth();
+//   return contributions.filter((activity) => {
+//     const date = new Date(activity.date);
+//     const monthOfDay = date.getMonth();
 
-    return (
-      date.getFullYear() === currentYear &&
-      monthOfDay > currentMonth - shownMonths &&
-      monthOfDay <= currentMonth
-    );
-  });
-};
+//     return (
+//       date.getFullYear() === currentYear &&
+//       monthOfDay > currentMonth - shownMonths &&
+//       monthOfDay <= currentMonth
+//     );
+//   });
+// };
 
 export default Docs;
