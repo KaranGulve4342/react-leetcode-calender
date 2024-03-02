@@ -60,14 +60,14 @@ async function fetchCalendarData(username: string, year: Year): Promise<ApiRespo
   return data as ApiResponse;
 }
 
-const GitHubCalendar: FunctionComponent<Props> = ({
+const LeetcodeCalendar: FunctionComponent<Props> = ({
   username,
   year = 'last',
   labels,
   transformData: transformFn,
   transformTotalCount = true,
   throwOnError = false,
-  errorMessage = `Error – Fetching GitHub contribution data for "${username}" failed.`,
+  errorMessage = `Error – Fetching Leetcode Submissions data for "${username}" failed.`,
   ...props
 }) => {
   const [data, setData] = useState<ApiResponse | null>(null);
@@ -120,4 +120,4 @@ const GitHubCalendar: FunctionComponent<Props> = ({
   );
 };
 
-export default GitHubCalendar;
+export default LeetcodeCalendar;
